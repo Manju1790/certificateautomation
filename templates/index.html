@@ -1,0 +1,22 @@
+<h2>Upload Excel and Schedule</h2>
+<form method="POST" action="/upload" enctype="multipart/form-data">
+Excel: <input type="file" name="file"><br>
+Date: <input type="date" name="date"><br>
+Time: <input type="time" name="time"><br>
+<button>Upload</button>
+</form>
+<hr>
+<h2>Students</h2>
+<table border="1">
+<tr><th>Name</th><th>Email</th><th>Course</th><th>Date</th><th>Time</th><th>Status</th></tr>
+{% for s in students %}
+<tr>
+<td>{{s.Name}}</td>
+<td>{{s.Email}}</td>
+<td>{{s.Course}}</td>
+<td>{{s.SendDate}}</td>
+<td>{{s.SendTime}}</td>
+<td>{{s.Status}}</td>
+</tr>
+{% endfor %}
+</table>
